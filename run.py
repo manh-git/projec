@@ -3,16 +3,18 @@ from bot_ai import GameBot
 from game import Game 
 from settings import DodgeMethod
 
+
+
+from enum import Enum
+
+class DodgeMethod(Enum):
+    FURTHEST_SAFE_DIRECTION = 1
+    LEAST_DANGER_PATH = 2
+    LEAST_DANGER_PATH_ADVANCED = 3
+    RANDOM_SAFE_ZONE = 4
+    OPPOSITE_THREAT_DIRECTION = 5
+def main():
 game = Game()
-
-DodgeMethods = {
-    "Furthest Safe Direction": "FURTHEST_SAFE_DIRECTION",
-    "Least Danger": "LEAST_DANGER_PATH",
-    "Least Danger Advanced": "LEAST_DANGER_PATH_ADVANCED",
-    "Opposite Threat Direction": "OPPOSITE_THREAT_DIRECTION",
-    "Random Safe Zone": "RANDOM_SAFE_ZONE",
-}
-
 DodgeMethod = {
     "Furthest Safe Direction": lambda: GameBot(game, DodgeMethod.FURTHEST_SAFE_DIRECTION),
     "Least Danger": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH),
