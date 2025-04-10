@@ -1,6 +1,7 @@
 import time
 import numpy as np
 from game import Game
+import csv
 
 class BenchmarkRunner:
     def __init__(self,num_runs=10):
