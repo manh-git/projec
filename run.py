@@ -14,14 +14,17 @@ class DodgeMethod(Enum):
     RANDOM_SAFE_ZONE = 4
     OPPOSITE_THREAT_DIRECTION = 5
 def main():
-game = Game()
-DodgeMethod = {
+    
+    game = Game()
+    DodgeMethod = {
     "Furthest Safe Direction": lambda: GameBot(game, DodgeMethod.FURTHEST_SAFE_DIRECTION),
     "Least Danger": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH),
     "Least Danger Advanced": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH_ADVANCED),
     "Opposite Threat Direction": lambda: GameBot(game, DodgeMethod.OPPOSITE_THREAT_DIRECTION),
     "Random Safe Zone": lambda: GameBot(game, DodgeMethod.RANDOM_SAFE_ZONE),
 }
-runner = BenchmarkRunner()
-save_path= "/content/drive/MyDrive/game_ai/benchmark_results.csv"
-runner.run(DodgeMethod,save_csv=True,csv = save_path)
+    runner = BenchmarkRunner()
+    save_path= "/content/drive/MyDrive/game_ai/benchmark_results.csv"
+    runner.run(DodgeMethod,save_csv=True,csv = save_path)
+if __name__ == "__main__":
+    main()
