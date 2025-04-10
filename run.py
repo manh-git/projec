@@ -4,6 +4,15 @@ from game import Game
 from settings import DodgeMethod
 
 game = Game()
+
+DodgeMethods = {
+    "Furthest Safe Direction": "FURTHEST_SAFE_DIRECTION",
+    "Least Danger": "LEAST_DANGER_PATH",
+    "Least Danger Advanced": "LEAST_DANGER_PATH_ADVANCED",
+    "Opposite Threat Direction": "OPPOSITE_THREAT_DIRECTION",
+    "Random Safe Zone": "RANDOM_SAFE_ZONE",
+}
+
 DodgeMethod = {
     "Furthest Safe Direction": lambda: GameBot(game, DodgeMethod.FURTHEST_SAFE_DIRECTION),
     "Least Danger": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH),
