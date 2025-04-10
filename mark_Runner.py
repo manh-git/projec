@@ -20,13 +20,21 @@ class BenchmarkRunner:
                 duration = end -start
                 times.append(duration)
                 all_data.append({"algorithim": name, "run": i + 1,"time": duration})
+            
+            min_time = min(times)
+            max_time=max(times)
+            avg_time=sum(times)/len(times)
+            
             self.results[name]={
-                'runs': times
+                'runs': times,
+                'min_time': min_time,
+                'max_time': max_time,
+                'avg_time': avg_time,
+
             }
         if save_csv:
             keys =["algorithim","run","time"]
             with open(csv_filename,"w",newline='') as f:
-                writer = csv.DictWriter(f, fieldnames =keys)
+                writer = csv.DictWriter(f, fieldnames =keys+['min_time','max_time','avg_time'])
                 writer.writeheader()
                 writer.writerows(all_data)
-            
