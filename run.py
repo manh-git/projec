@@ -11,6 +11,6 @@ DodgeMethod = {
     "Opposite Threat Direction": lambda: GameBot(game, DodgeMethod.OPPOSITE_THREAT_DIRECTION),
     "Random Safe Zone": lambda: GameBot(game, DodgeMethod.RANDOM_SAFE_ZONE),
 }
-runner = BenchmarkRunner
+runner = BenchmarkRunner()
 save_path= "/content/drive/MyDrive/game_ai/benchmark_results.csv"
 runner.run(DodgeMethod,save_csv=True,csv = save_path)
