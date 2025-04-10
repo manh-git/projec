@@ -16,7 +16,7 @@ class DodgeMethod(Enum):
 def main():
     
     game = Game()
-    DodgeMethod = {
+    dodgeMethod = {
     "Furthest Safe Direction": lambda: GameBot(game, DodgeMethod.FURTHEST_SAFE_DIRECTION),
     "Least Danger": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH),
     "Least Danger Advanced": lambda: GameBot(game, DodgeMethod.LEAST_DANGER_PATH_ADVANCED),
@@ -25,6 +25,6 @@ def main():
 }
     runner = BenchmarkRunner()
     save_path= "/content/drive/MyDrive/game_ai/benchmark_results.csv"
-    runner.run(DodgeMethod,save_csv=True,csv = save_path)
+    runner.run(dodgeMethod,save_csv=True,csv = save_path)
 if __name__ == "__main__":
     main()
