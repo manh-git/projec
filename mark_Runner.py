@@ -32,6 +32,11 @@ class BenchmarkRunner:
                 'avg_time': avg_time,
 
             }
+            for i in range(self.num_runs):
+                all_data[i]["min_time"] = min_time
+                all_data[i]["max_time"] = max_time
+                all_data[i]["avg_time"] = avg_time
+
         if save_csv:
             keys =["algorithim","run","time"]
             with open(csv_filename,"w",newline='') as f:
