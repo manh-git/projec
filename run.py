@@ -26,6 +26,6 @@ def main():
 }
     runner = BenchmarkRunner()
     save_path= "/content/drive/MyDrive/game_ai/benchmark_results.csv"
-    runner.run(dodgeMethod,save_csv=True,csv = save_path)
+    runner.run(dodgeMethod,save_csv=True,csv_filename = save_path)
 if __name__ == "__main__":
     main()
