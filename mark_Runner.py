@@ -7,7 +7,7 @@ class BenchmarkRunner:
     def __init__(self,num_runs=10):
         self.num_runs = num_runs
         self.results = {}
-    def run(self,dodgeMethod, save_csv = True, csv="benchmark_result.csv"):
+    def run(self,dodgeMethod, save_csv = True, csv_filename="benchmark_result.csv"):
         all_data = []
         for name, dodgeMethod in dodgeMethod.items():
             print(f"Running:{name}")
@@ -25,7 +25,7 @@ class BenchmarkRunner:
             }
         if save_csv:
             keys =["algorithim","run","time"]
-            with open(csv,"w",newline='') as f:
+            with open(csv_filename,"w",newline='') as f:
                 writer = csv.DictWriter(f, fieldnames =keys)
                 writer.writeheader()
                 writer.writerows(all_data)
