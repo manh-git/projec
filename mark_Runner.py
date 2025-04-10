@@ -18,7 +18,7 @@ class BenchmarkRunner:
                 end = time.perf_counter()
                 duration = end -start
                 times.append(duration)
-                all_data.append({"algorithm": name, "run": i + 1,"time": duration})
+                all_data.append({"algorithim": name, "run": i + 1,"time": duration})
             self.results[name]={
                 'runs': times
             }
