@@ -27,6 +27,6 @@ class BenchmarkRunner:
             keys =["algorithim","run","time"]
             with open(csv,"w",newline='') as f:
                 writer = csv.DictWriter(f, fieldnames =keys)
-                writer.writerheader()
+                writer.writeheader()
                 writer.writerows(all_data)
             
